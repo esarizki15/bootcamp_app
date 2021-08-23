@@ -261,17 +261,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFD803),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                alignment: Alignment.center,
-                                child: InkWell(
-                                  onTap: () {
-                                    print("login");
-                                  },
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, '/homePage');
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 15),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFD803),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  alignment: Alignment.center,
                                   child: Text("DAFTAR"),
                                 ),
                               ),
@@ -291,8 +292,18 @@ class _RegisterPageState extends State<RegisterPage> {
                         margin: EdgeInsets.only(right: 5),
                         child: Text("Sudah memiliki akun?"),
                       ),
-                      Container(
-                        child: Text("Masuk Sekarang!"),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(context, '/loginPage');
+                        },
+                        child: Container(
+                          child: Text(
+                            "Masuk Sekarang!",
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),

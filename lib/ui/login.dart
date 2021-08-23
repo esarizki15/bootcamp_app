@@ -164,17 +164,18 @@ class _LoginPageState extends State<LoginPage> {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 15),
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFFD803),
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                alignment: Alignment.center,
-                                child: InkWell(
-                                  onTap: () {
-                                    print("login");
-                                  },
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.pushReplacementNamed(
+                                      context, '/homePage');
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(vertical: 15),
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFFFD803),
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  alignment: Alignment.center,
                                   child: Text("MASUK"),
                                 ),
                               ),
@@ -193,8 +194,19 @@ class _LoginPageState extends State<LoginPage> {
                         margin: EdgeInsets.only(right: 5),
                         child: Text("Belum memiliki akun?"),
                       ),
-                      Container(
-                        child: Text("Daftar Sekarang!"),
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                              context, '/registerPage');
+                        },
+                        child: Container(
+                          child: Text(
+                            "Daftar Sekarang!",
+                            style: TextStyle(
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
